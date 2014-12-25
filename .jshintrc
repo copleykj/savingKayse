@@ -1,0 +1,7 @@
+{
+    "globals":{
+        "Meteor": false,
+        "Router": false,
+        "Template": false
+    }
+}
