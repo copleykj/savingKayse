@@ -2,6 +2,7 @@
     "globals":{
         "Meteor": false,
         "Router": false,
-        "Template": false
+        "Template": false,
+        "$": false
     }
 }

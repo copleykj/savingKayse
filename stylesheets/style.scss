@@ -3,6 +3,10 @@ $dark_purple2: #ca00fc;
 
 $nav_active: #70018b;
 
+body {
+    position:relative;
+}
+
 @import "compass";
 
 @import "fonts";

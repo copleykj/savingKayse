@@ -1,7 +1,30 @@
+.row h1{
+    font-family: 'Open Sans';
+    font-size: 50px;
+    margin-bottom: .6em;
+}
+
+p{
+    font-family: 'Open Sans';
+    font-size: 18px;
+    line-height: 1.6em;
+}
+
+.box{
+    padding: 40px 0;
+}
+
+#facebook{
+    position:absolute;
+    color: $dark_purple2;
+    margin: 15px;
+}
+
 #main-header{
-    position:relative;
+    position: relative;
+    padding-top:1px;
     height:450px;
-    background-image:url(https://dl-web.dropbox.com/get/Public/Kayse_380-9878.jpg?_subject_uid=22646151&w=AAA8hcYvbM6xreEuN7qZcZI7m7MlqRMFugkLaekWmsM__w);
+    background-image:url(/Kayse_380-9878.jpg);
     background-position: 0px -100px;
     background-size: 105%;
     h1{
@@ -19,20 +42,46 @@
     #main-nav{
         line-height:40px;
         font-size:18px;
-        float:right;
         width:60%;
+        float:right;
         margin-top:370px;
-        
+        text-align: center;
         background: linear-gradient(to right, rgba(255,255,255, .1), rgba(255,255,255, .7));
-        a{
-            color: #222;
-            font-family: 'Open Sans', sans-serif;
-            margin-left:7%;
+        
+        &.affix{
+            margin:0;
+            top:0;
+            width:100% !important;
+            background: linear-gradient(to bottom, $dark_purple2, $dark_purple) !important;
+            z-index: 2;
+            a{
+                color:#fff;
+                padding-top:2px;
+                padding-bottom:2px;
+            }
+            li.active{
+                background: linear-gradient(to bottom, lighten($dark_purple2, 8), $dark_purple);
+                border-bottom: none;
+                text-decoration: underline;
+            }
+
+        }
+        
+        li{
+            display:inline-block;
+            a{
+                color: #222;
+                font-family: 'Open Sans', sans-serif;
+                &:hover, &:focus{
+                    background-color: transparent;
+                }
+            }
             &.active{
                 color:$nav_active;
                 border-bottom:1px solid;
             }
         }
+        
     }
      
 }
@@ -45,11 +94,9 @@
 
 @media screen and (max-width: 1199px){
     #main-nav{
-        width: auto !important; 
-        float:none !important;
-        margin: 0 !important;
-        background: linear-gradient(to right, rgba(255,255,255, .0), rgba(255,255,255, .8), rgba(255,255,255, .0)) !important;
-        text-align:center;
+        width:50% !important;
+        background: linear-gradient(to right, rgba(255,255,255, .08), rgba(255,255,255, .8), rgba(255,255,255, .08)) !important;
+        
     }
     
     #main-header{
@@ -81,6 +128,44 @@
     #main-header{
         background-position: 0 0 !important;
         
+    }
+}
+
+@media screen and (max-width: 560px){
+    #facebook{
+        margin-top:100px;
+    }
+    #main-nav{
+        background-color: #fff !important;
+    }
+    
+    #main-header{
+        background-position: 0 40px !important; 
+        
+        h1{
+            left:30px !important;
+            right:30px;
+            text-align:center;
+            font-size: 60px;
+        }
+    }
+}
+
+@media screen and (max-width: 480px){
+    #main-header{
+        background-size: cover;
+        background-position: center 50px !important;
+        h1{
+            font-size:45px;
+        }
+    }
+    
+    #main-nav{
+        a{
+            padding-left: 8px;
+            padding-right: 8px;
+            font-size: 15px;
+        }
     }
 }
 
