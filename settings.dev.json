@@ -1,0 +1,10 @@
+{
+    "public" : {
+        "Stripe" : {
+            "publicKey" : "pk_test_etLgsSSbyvOJTysMAQkHx2ek"
+        }
+    },
+    "Stripe" : {
+        "secretKey" : "sk_test_ovQVxMZJNgmK3YxzoqyK54Tg"
+    }
+}

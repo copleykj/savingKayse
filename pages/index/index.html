@@ -1,18 +1,21 @@
 <template name="index">
    
     <header id="main-header">
-        <i id="facebook" class="fa fa-facebook-square fa-3x"></i>
+        <div id="facebook">
+            <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FsavingKayse%2F&amp;width&amp;layout=box_count&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=65" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:65px;" allowTransparency="true"></iframe><br>
+            <a href="https://www.facebook.com/savingKayse" target="_blank"><i class="fa fa-facebook-square fa-3x"></i></a>
+        </div>
         <h1>Saving Kayse</h1>
         <div id="main-nav">
             <ul class="nav">
                 <li>
-                    <a href="#diagnosis" class="active">Diagnosis</a>
+                    <a href="#aboutKayse">About Kayse</a>
+                </li>
+                <li>
+                    <a href="#diagnosis">Diagnosis</a>
                 </li>
                 <li>
                     <a href="#treatment">Treatment</a>
-                </li>
-                <li>
-                    <a href="#updates">Updates</a>
                 </li>
                 <li>
                     <a href="#donate">Donate</a>
@@ -24,49 +27,187 @@
     <div id="highlight"></div>
     
     <div class="container">
+        <div id="aboutKayse" class="row box">
+            <div class="col-md-10 col-md-offset-1">
+                <h1>About Kayse</h1>
+                <p>
+                    Kayse was a typical 5 year old boy. He loved to play, run and laugh. He loved to color and draw for hours on end. His life was carefree and  fun 'n games. Now Kayse is fighting for his life and needs your thoughts, prayers and help!
+                </p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="divider"></div>
+            </div>
+        </div>
+        
         <div id="diagnosis" class="row box">
             <div class="col-md-10 col-md-offset-1">
                 <h1>Diagnosis</h1>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, incidunt, veritatis. Distinctio aperiam praesentium, odit, atque ducimus asperiores, nemo assumenda unde laborum odio et. Accusantium ullam, debitis inventore molestiae odit.
+                    In October Kayse developed a persistant runny nose. He was taken to the doctors and we were told he had allergies. Then at the beginning of December he started to have abdominal pains, refusing to eat, and vomiting. He was taken to the emergency room and we were told he was constipated and given a perscription for a laxative.
                 </p>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic odio vero, vitae placeat voluptates ab enim rerum accusamus aut ipsam ipsa iure, reiciendis unde consequuntur quod deleniti magnam eum earum.
+                    On December 13th, 5 days after his 5th birthday, Kayse was taken to the emergency room with severe abdominal pain, difficulty breathing through his nose and eye deviation. During this visit they discovered a mass in his sinuses that had started to expand out of his nasal cavity and into his throat.
                 </p>
+                <p>
+                    Kayse was then transferred to <a href="http://www.geisinger.org/">Geisinger Medical Center</a> in Danville, PA. At Geisinger they performed an abdominal CT scan and found a second mass. It was then that we were told that the masses were likely cancer. 
+                </p>
+                <p>
+                    On December 15th underwent surgery to have a mediport placed and to biopsy the abdominal mass.
+                </p>
+                <p>
+                    Finally on the 17th we recieved the results of the biopsy - Stage 3 <a href="http://en.wikipedia.org/wiki/Burkitt%27s_lymphoma">Burkitt's Lymphoma</a>, the fastest growing cancer found in humans.
+                </p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="divider"></div>
             </div>
         </div>
         
         <div id="treatment" class="row box">
             <div class="col-md-10 col-md-offset-1">
                 <h1>Treatment</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, amet. Voluptate quis modi soluta distinctio, doloribus facere et dicta voluptas obcaecati quia recusandae libero alias, vitae, fugiat consequuntur omnis beatae.
-                </p>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo deleniti harum dolores veritatis mollitia! Voluptates suscipit inventore ratione voluptatibus minus, nihil nam sapiente autem sint soluta eaque fuga saepe optio?
+                    On December 18th Kayse Started his Chemotherapy regimine consisting of both intravenous and intrathecal medications. His first treatment will be 2 weeks long with The first week's course being a low dose course to prevent <a href="http://en.wikipedia.org/wiki/Tumor_lysis_syndrome">tumor lysis syndrome</a>. After the first two weeks Kayse will have to undergo a week long treatment each month for a total of 6 months worth of chemotherapy treatments. 
                 </p>
             </div>
         </div>
         
-        <div id="updates" class="row box">
-            <div class="col-md-10 col-md-offset-1">
-                <h1>Updates</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, amet. Voluptate quis modi soluta distinctio, doloribus facere et dicta voluptas obcaecati quia recusandae libero alias, vitae, fugiat consequuntur omnis beatae.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo deleniti harum dolores veritatis mollitia! Voluptates suscipit inventore ratione voluptatibus minus, nihil nam sapiente autem sint soluta eaque fuga saepe optio?
-                </p>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="divider"></div>
             </div>
         </div>
         
         <div id="donate" class="row box">
+            {{#unless donated}}
             <div class="col-md-10 col-md-offset-1">
                 <h1>Donate</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, amet. Voluptate quis modi soluta distinctio, doloribus facere et dicta voluptas obcaecati quia recusandae libero alias, vitae, fugiat consequuntur omnis beatae.
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p>
+                            If you can find it in your heart to help our familiy in this time of need we would be forever grateful. While insurance covers a lot of the costs, it does not cover all medical costs or the expense of traveling hours away for treatment.
+                        </p>
+                        <p>
+                            <em><strong>Please remember that even if you cannot help monetarily, sending Kayse "Get Well" wishes on our <a href="https://www.facebook.com/savingKayse" target="_blank">Facebook Page</a> and sharing the page helps just as much.</strong></em>
+                        </p>
+                        <p>
+                            &nbsp;
+                        </p>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <form id="donationForm" name="donationForm"> 
+                            <div class="form-group">
+                                <label for="emailAddress">Email</label>
+                                <input type="email" class="form-control" name="emailAddress" id="emailAddress" placeholder="john@example.com">
+                                <div id="emailAddress-error"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-7">
+                                    <div class="form-group">
+                                        <label for="nameOnCard">Name On Card</label>
+                                        <input type="text" class="form-control" name="nameOnCard" id="nameOnCard" placeholder="John Doe">
+                                        <div id="nameOnCard-error"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-5">
+                                    <div class="form-group">
+                                        <label for="donationAmount">Amount</label>
+                                        
+                                        <div class="input-group">
+                                            <div class="input-group-addon">$</div>
+                                                <input type="text" class="form-control" name="donationAmount" id="donationAmount" placeholder="20">
+                                            <div class="input-group-addon">.00</div>
+                                        </div>
+                                        <div id="donationAmount-error"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    <div class="form-group">
+                                        <label for="ccnum">Card Number</label>
+                                        <input type="text" id="ccnum" name="ccnum" class="form-control" placeholder="1234 5678 9012 3456" maxlength="19" data-stripe="number">
+                                        <div id="ccnum-error"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="form-group">
+                                        <label for="cvcnum">CVC Number</label>
+                                        <input type="text" id="cvcnum" name="cvcnum" class="form-control" placeholder="123" data-stripe="cvc">
+                                        <div id="cvcnum-error"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="form-group">
+                                        <label for="expmonth">Exp Month</label>
+                                        <select id="expmonth" name="expmonth" class="form-control" data-stripe="exp-month">
+                                            <option disabled selected>Month</option>
+                                            <option value="01">January</option>
+                                            <option value="02">Febuary</option>
+                                            <option value="03">March</option>
+                                            <option value="04">April</option>
+                                            <option value="05">May</option>
+                                            <option value="06">June</option>
+                                            <option value="07">July</option>
+                                            <option value="08">August</option>
+                                            <option value="09">September</option>
+                                            <option value="10">October</option>
+                                            <option value="11">November</option>
+                                            <option value="12">December</option>
+                                        </select>
+                                        <div id="expmonth-error"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="form-group">
+                                        <label for="expyear">Exp Year</label>
+                                        <select id="expyear" name="expyear" class="form-control" data-stripe="exp-year">
+                                            <option disabled selected>Year</option>
+                                            <option value="2014">2014</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2020">2020</option>
+                                        </select>
+                                        <div id="expyear-error"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="form-group">
+                                        <label style="width:100%">&nbsp;</label>
+                                        <button type="submit" class="btn"> Donate </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="payment-error"></div>
+                        </form>
+                    </div>
+                </div> 
+            </div>
+            {{else}}
+            <div class="col-md-10 col-md-offset-1">
+                <h1><i class="fa fa-ambulance"></i> Thank You!</h1>
+                <p>
+                    We thank you from the bottom of our heart for your generous donation. Every bit helps us to come out of this just a little bit less in debt and able to enjoy the recovery of our beautiful little boy.
                 </p>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo deleniti harum dolores veritatis mollitia! Voluptates suscipit inventore ratione voluptatibus minus, nihil nam sapiente autem sint soluta eaque fuga saepe optio?
+                    Please remember to share and like our page on Facebook.
                 </p>
             </div>
+            {{/unless}}
         </div>
         
     </div>

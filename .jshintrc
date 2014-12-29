@@ -1,8 +1,14 @@
 {
     "globals":{
+        "window": false,
         "Meteor": false,
         "Router": false,
         "Template": false,
-        "$": false
+        "Session": false,
+        "Mesosphere": false,
+        "Stripe": true,
+        "StripeSync": false,
+        "$": false,
+        "_": false
     }
 }
