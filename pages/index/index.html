@@ -85,7 +85,6 @@
         </div>
         
         <div id="donate" class="row box">
-            {{#unless donated}}
             <div class="col-md-10 col-md-offset-1">
                 <h1>Donate</h1>
                 <div class="row">
@@ -101,6 +100,7 @@
                         </p>
                     </div>
                     
+                    {{#unless donated}}
                     <div class="col-sm-6">
                         <form id="donationForm" name="donationForm"> 
                             <div class="form-group">
@@ -141,7 +141,7 @@
                                 <div class="col-xs-4">
                                     <div class="form-group">
                                         <label for="cvcnum">CVC Number</label>
-                                        <input type="text" id="cvcnum" name="cvcnum" class="form-control" placeholder="123" data-stripe="cvc">
+                                        <input type="text" id="cvcnum" name="cvcnum" class="form-control" placeholder="123" data-stripe="cvc" maxlength="4">
                                         <div id="cvcnum-error"></div>
                                     </div>
                                 </div>
@@ -193,23 +193,64 @@
                                 </div>
                             </div>
                             <div id="payment-error"></div>
+                            <p>We have raised ${{totalDonations}}.00 in donations.</p>
                         </form>
                     </div>
+                    {{else}}
+                    <div class="col-sm-6 alert alert-success">
+                        <p><strong>Thank You!</strong></p>
+                        <p>
+                            We thank you from the bottom of our heart for your generous donation.
+                        </p>
+                        <p>
+                            Please remember to share and like our page on Facebook.
+                        </p>
+                        <p>&nbsp;</p>
+                        <p><strong>Current Donations</strong></p>
+                        <table class="table">
+                            <thead>
+                                <th>Donators Name</th>
+                                <th>Amount</th>
+                            </thead>
+                            <tbody>
+                                {{#each donators}}
+                                <tr>
+                                    <td>{{name}}</td>
+                                    <td>${{amount}}.00</td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                    {{/unless}}
                 </div> 
             </div>
-            {{else}}
-            <div class="col-md-10 col-md-offset-1">
-                <h1><i class="fa fa-ambulance"></i> Thank You!</h1>
-                <p>
-                    We thank you from the bottom of our heart for your generous donation. Every bit helps us to come out of this just a little bit less in debt and able to enjoy the recovery of our beautiful little boy.
-                </p>
-                <p>
-                    Please remember to share and like our page on Facebook.
-                </p>
-            </div>
-            {{/unless}}
+
         </div>
         
+        <div id="donations" class="row">
+            <div class="col-md-6 col-md-offset-3">
+                {{#unless donated}}
+                {{#if donators}}
+                <h2>Current Donations</h2>
+                <table class="table">
+                    <thead>
+                        <th>Donators Name</th>
+                        <th>Amount</th>
+                    </thead>
+                    <tbody>
+                        {{#each donators}}
+                        <tr>
+                            <td>{{name}}</td>
+                            <td>${{amount}}.00</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                {{/if}}
+                {{/unless}}
+            </div>
+        </div>
     </div>
     
 </template>

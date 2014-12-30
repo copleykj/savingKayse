@@ -15,12 +15,15 @@ var affixNav = function affixNav() {
     });
 };
 
+Meteor.subscribe("donators");
+
 Template.index.rendered = function() {
     $('body').scrollspy({ target: '#main-nav', offset: 180 });
     
     affixNav();
     
     $('#ccnum').payment('formatCardNumber');
+    $("#cvcnum").payment('restrictNumeric');
     $('#donationAmount').payment('restrictNumeric');
     
     if(window.location.hash){
@@ -30,7 +33,20 @@ Template.index.rendered = function() {
 
 Template.index.helpers({
     donated: function(){
-        return Session.get("donated");
+        return ReactiveStore.get("donated");
+    },
+    donators: function() {
+        var donators = Donators.find();
+        if(donators.count() > 0){
+            return donators;
+        }
+    },
+    totalDonations: function() {
+        var total = 0;
+        Donators.find().forEach(function(donation){
+            total += parseInt(donation.amount);
+        });
+        return total;
     }
 });
 
@@ -64,7 +80,7 @@ Mesosphere({
                         Mesosphere.Utils.failureCallback({payment:{message:error.reason}}, $(form));
                     }else{
                         Mesosphere.Utils.successCallback(formData, $(form));
-                        Session.set("donated", true);
+                        ReactiveStore.set("donated", true);
                     }
                     input.text("Donate").attr('disabled', null);
                 });

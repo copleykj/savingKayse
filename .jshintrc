@@ -2,13 +2,15 @@
     "globals":{
         "window": false,
         "Meteor": false,
+        "Mongo": false,
         "Router": false,
         "Template": false,
-        "Session": false,
+        "ReactiveStore": false,
         "Mesosphere": false,
         "Stripe": true,
         "StripeSync": false,
         "$": false,
-        "_": false
+        "_": false,
+        "Donators": true
     }
 }

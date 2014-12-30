@@ -7,8 +7,11 @@ Meteor.methods({
                 currency: "usd",
                 card: token
             });
+
         }catch(e){
             throw new Meteor.Error("501", e.message);
         }
+
+        Donators.insert({name:formData.nameOnCard, email:formData.emailAddress, amount:formData.donationAmount});
     }
 });
