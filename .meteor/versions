@@ -58,6 +58,7 @@ mizzao:bootstrap-3@3.3.1_1
 mobile-status-bar@1.0.2
 mongo@1.0.11
 mrgalaxy:stripe@1.5.6
+mrt:reactive-store@0.0.1
 mrt:underscore-string-latest@2.3.3
 natestrauser:font-awesome@4.2.0
 natestrauser:jquery-scrollto@1.4.7
